@@ -1,0 +1,66 @@
+{
+  "name": "generator-webapp",
+  "version": "4.0.0-5",
+  "description": "Scaffold out a front-end web app",
+  "license": "BSD-2-Clause",
+  "repository": "yeoman/generator-webapp",
+  "author": "The Yeoman Team",
+  "main": "app/index.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "test": "eslint . && mocha --reporter spec --timeout 3000"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "web",
+    "app",
+    "front-end",
+    "h5bp",
+    "modernizr",
+    "jquery",
+    "gulp"
+  ],
+  "dependencies": {
+    "command-exists": "^1.2.8",
+    "generator-jasmine": "^2.0.1",
+    "generator-mocha": "^2.0.1",
+    "mkdirp": "^0.5.1",
+    "yeoman-generator": "^3.1.1",
+    "yosay": "^2.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "eslint": "^5.10.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "husky": "^1.2.1",
+    "lint-staged": "^8.1.0",
+    "mocha": "^5.2.0",
+    "prettier": "^1.15.3",
+    "yeoman-assert": "^3.0.0",
+    "yeoman-test": "^1.6.0"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test",
+      "pre-publish": "yarn test"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
