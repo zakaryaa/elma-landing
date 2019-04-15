@@ -1,11 +1,9 @@
-// generated on <%= date %> using <%= name %> <%= version %>
+// generated on 2019-04-14 using generator-webapp 4.0.0-5
 const { src, dest, watch, series, parallel, lastRun } = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
-<%_ if (includeModernizr) { -%>
 const fs = require('fs');
 const mkdirp = require('mkdirp');
 const Modernizr = require('modernizr');
-<%_ } -%>
 const browserSync = require('browser-sync');
 const del = require('del');
 const autoprefixer = require('autoprefixer');
@@ -22,7 +20,6 @@ const isTest = process.env.NODE_ENV === 'test';
 const isDev = !isProd && !isTest;
 
 function styles() {
-  <%_ if (includeSass) { -%>
   return src('app/styles/*.scss')
     .pipe($.plumber())
     .pipe($.if(!isProd, $.sourcemaps.init()))
@@ -31,10 +28,6 @@ function styles() {
       precision: 10,
       includePaths: ['.']
     }).on('error', $.sass.logError))
-  <%_ } else { -%>
-  return src('app/styles/*.css')
-    .pipe($.if(!isProd, $.sourcemaps.init()))
-  <%_ } -%>
     .pipe($.postcss([
       autoprefixer()
     ]))
@@ -53,7 +46,6 @@ function scripts() {
     .pipe(server.reload({stream: true}));
 };
 
-<%_ if (includeModernizr) { -%>
 async function modernizr() {
   const readConfig = () => new Promise((resolve, reject) => {
     fs.readFile(`${__dirname}/modernizr.json`, 'utf8', (err, data) => {
@@ -82,7 +74,6 @@ async function modernizr() {
   ]);
   await generateScript(config);
 }
-<%_ } -%>
 
 const lintBase = files => {
   return src(files)
@@ -151,11 +142,7 @@ const build = series(
   clean,
   parallel(
     lint,
-    <%_ if (includeModernizr) { -%>
     series(parallel(styles, scripts, modernizr), html),
-    <%_ } else { -%>
-    series(parallel(styles, scripts), html),
-    <%_ } -%>
     images,
     fonts,
     extras
@@ -181,15 +168,9 @@ function startAppServer() {
     '.tmp/fonts/**/*'
   ]).on('change', server.reload);
 
-  <%_ if (includeSass) { -%>
   watch('app/styles/**/*.scss', styles);
-  <%_ } else { -%>
-  watch('app/styles/**/*.css', styles);
-  <%_ } -%>
   watch('app/scripts/**/*.js', scripts);
-  <%_ if (includeModernizr) { -%>
   watch('modernizr.json', modernizr);
-  <%_ } -%>
   watch('app/fonts/**/*', fonts);
 }
 
@@ -227,11 +208,7 @@ function startDistServer() {
 
 let serve;
 if (isDev) {
-  <%_ if (includeModernizr) { -%>
   serve = series(clean, parallel(styles, scripts, modernizr, fonts), startAppServer);
-  <%_ } else { -%>
-  serve = series(clean, parallel(styles, scripts, fonts), startAppServer);
-  <%_ } -%>
 } else if (isTest) {
   serve = series(clean, scripts, startTestServer);
 } else if (isProd) {
