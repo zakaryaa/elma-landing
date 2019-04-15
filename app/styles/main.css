@@ -1,0 +1,134 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+#container {
+  background-image: url("elmedeal.png");
+  background-size: contain;
+  height: 700px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: white;
+  justify-content: center;
+
+}
+
+.flex-container div {
+  background-color: white;
+  width: 150px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+
+
+#textContainer {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+#navbar {
+  text-align: center;
+  color: gray;
+  background-color: rgb(245, 245, 245);
+}
+
+#navbar ul {
+  display: inline-block;
+  list-style: none;
+}
+
+* html #navbar ul {
+
+  display: inline;
+}
+
+*+html #navbar ul {
+
+  display: inline;
+}
+
+#navbar li {
+  display: inline;
+}
+
+#navbar a {
+  float: left;
+  text-decoration: none;
+  padding: 0 30px;
+  /* variable width */
+}
+
+h1 {
+  color: white;
+  font-size: 300%;
+}
+
+h3 {
+
+  color: white;
+}
+
+#partner {
+  border-radius: 25px;
+  color: white;
+  background-color: rgb(189, 153, 75);
+  height: 40px;
+  width: 170px;
+  border: none;
+
+}
+
+#identify {
+  border-radius: 25px;
+  background-color: white;
+  color: blue;
+  height: 40px;
+  width: 120px;
+  border-color: blue;
+
+}
+
+#option {
+  width: 250px;
+  height: 50px;
+  border-radius: 9px;
+  padding-left: 20px;
+  float: left;
+  border-bottom-right-radius: 0%;
+  border-top-right-radius: 0%;
+}
+
+#location {
+  width: 200px;
+  height: 50px;
+  padding-left: 10px;
+  float: left;
+  border: none;
+}
+
+#recherche {
+  width: 200px;
+  height: 50px;
+  border-radius: 9px;
+  color: white;
+  background-color: rgb(42, 42, 90);
+  float: left;
+  border-bottom-left-radius: 0%;
+  border-top-left-radius: 0%;
+}

@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
   <!-- endbuild -->
   <!-- build:css styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="main.css">
   <!-- endbuild -->
   <!-- build:js scripts/modernizr.js -->
   <script src="scripts/modernizr.js"></script>
@@ -21,78 +21,46 @@
 </head>
 
 <body>
-  <!--[if IE]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-  <div class="container">
-    <div class="header">
-      <ul class="nav nav-pills float-right">
-        <li class="nav-item">
-          <a href="#" class="nav-link active">Home</a>
-        </li>
-        <li>
-          <a href="#" class="nav-link">About</a>
-        </li>
-        <li>
-          <a href="#" class="nav-link">Contact</a>
-        </li>
-      </ul>
-      <h3 class="text-muted">elma landing</h3>
-    </div>
+  <div id="header">
 
-    <div class="jumbotron">
-      <h1 class="display-3">Bonjour</h1>
-      <p class="lead">Always a pleasure scaffolding your apps.</p>
-      <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
-    </div>
+    <div class="flex-container">
 
-    <div class="row marketing">
-      <div class="col-lg-6">
-        <h4>HTML5 Boilerplate</h4>
-        <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or
-          sites.</p>
+      <div><a id="title">ELMEDEAL</a></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div> <button id="partner">DEVENIR PARTENAIRE</button></div>
+      <div> <button id="identify">S'IDENTIFIER</button></div>
 
-        <h4>Sass</h4>
-        <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
-
-        <h4>Bootstrap</h4>
-        <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-
-        <h4>Modernizr</h4>
-        <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and
-          CSS3-powered websites.</p>
-      </div>
-    </div>
-
-    <div class="footer">
-      <p>♥ from the Yeoman team</p>
     </div>
   </div>
-  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-  <script>
-    (function (b, o, i, l, e, r) {
-      b.GoogleAnalyticsObject = l;
-      b[l] || (b[l] =
-        function () {
-          (b[l].q = b[l].q || []).push(arguments)
-        });
-      b[l].l = +new Date;
-      e = o.createElement(i);
-      r = o.getElementsByTagName(i)[0];
-      e.src = 'https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e, r)
-    }(window, document, 'script', 'ga'));
-    ga('create', 'UA-XXXXX-X');
-    ga('send', 'pageview');
+  <div id="navbar">
+    <ul>
+      <li><a> Massage </a></li>
+      <li><a> Visage </a></li>
+      <li><a> Mains et pieds </a></li>
+      <li><a> EPILATION </a></li>
+      <li><a> CORPS </a></li>
+      <li><a> COIFFURE </a></li>
+      <li><a> HAMMAM / SPA </a></li>
+    </ul>
+  </div>
+  <div id="container">
+    <div id="textContainer">
+      <h1>Vos rendez-vous beauté en ligne</h1>
+      <h3>SIMPLE-RAPIDE-CONFIRMATION IMMMEDIATE - PAIEMENT SUR PLACE</h3>
 
-  </script>
-  <!-- build:js scripts/vendor.js -->
-  <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!-- endbuild -->
-  <!-- build:js scripts/main.js -->
-  <script src="scripts/main.js"></script>
-  <!-- endbuild -->
+      <select id="option">
+        <option value="Service">Service</option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+      </select>
+      <input type="text" id="location" value="Ville,Adresse"></input>
+      <button id="recherche">SEARCH</button>
+    </div>
+  </div>
 </body>
 
 </html>
