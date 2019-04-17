@@ -10,7 +10,7 @@ html {
 
 
 #container {
-  background-image: url("elmedeal.png");
+  background-image: url("../assets/img/elmedeal.png");
   background-size: contain;
   height: 700px;
 }
@@ -131,4 +131,8 @@ h3 {
   float: left;
   border-bottom-left-radius: 0%;
   border-top-left-radius: 0%;
+}
+
+.navbar li a {
+  color: grey;
 }
