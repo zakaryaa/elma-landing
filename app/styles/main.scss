@@ -9,7 +9,7 @@ html {
 }
 
 
-#container {
+.container {
   background-image: url("../assets/img/elmedeal.png");
   background-size: contain;
   height: 700px;
@@ -34,7 +34,7 @@ html {
 
 
 
-#textContainer {
+.textContainer {
   position: absolute;
   top: 80%;
   left: 50%;
@@ -84,7 +84,7 @@ h3 {
   color: white;
 }
 
-#partner {
+.partner {
   border-radius: 25px;
   color: white;
   background-color: rgb(189, 153, 75);
@@ -94,7 +94,7 @@ h3 {
 
 }
 
-#identify {
+.identify {
   border-radius: 25px;
   background-color: white;
   color: blue;
@@ -104,7 +104,7 @@ h3 {
 
 }
 
-#option {
+.option {
   width: 250px;
   height: 50px;
   border-radius: 9px;
@@ -114,7 +114,7 @@ h3 {
   border-top-right-radius: 0%;
 }
 
-#location {
+.location {
   width: 200px;
   height: 50px;
   padding-left: 10px;
@@ -122,7 +122,7 @@ h3 {
   border: none;
 }
 
-#recherche {
+.recherche {
   width: 200px;
   height: 50px;
   border-radius: 9px;
@@ -135,4 +135,45 @@ h3 {
 
 .navbar li a {
   color: grey;
+}
+
+.soins {
+  color: black;
+  text-align: center;
+}
+
+.soin {
+  margin-left: 350px;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+}
+
+body {
+  margin: 0%;
+}
+
+.row {
+  margin: .4vw;
+  font-size: 0;
+  display: -ms-flexbox;
+  -ms-flexbox-wrap: wrap;
+  -ms-flexbox-direction: column;
+  -ms-flexbox-flow: row wrap;
+  display: flex;
+}
+
+.row div {
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  width: 200px;
+  margin: .4vw;
+}
+
+.row div img {
+
+  width: 100%;
+  height: auto;
+  text-align: center;
 }
